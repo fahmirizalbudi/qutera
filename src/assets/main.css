@@ -1,19 +1,8 @@
 @import "tailwindcss";
 
-@layer base {
-  @font-face {
-    font-family: 'Inter';
-    src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-  }
-  @font-face {
-    font-family: 'Playfair Display';
-    src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap');
-  }
-}
-
 :root {
-  --color-background: #f8fafc;
-  --color-text: #1e293b;
+  --color-background: #FDFDFB;
+  --color-text: #121212;
 }
 
 body {

@@ -5,13 +5,13 @@ import gsap from 'gsap'
 
 const props = defineProps<{
   quote: Quote | null
+  isFavorite: boolean
 }>()
 
 const emit = defineEmits<{
   (e: 'close'): void
   (e: 'toggle-favorite', id: number, event: Event): void
   (e: 'copy', quote: Quote, event: Event): void
-  (e: 'is-favorite', id: number): boolean
 }>()
 
 const onEnter = () => {
@@ -52,10 +52,10 @@ const getFontSize = (quoteText: string) => {
           </cite>
           <div class="flex items-center gap-6 mt-4">
             <button @click="emit('toggle-favorite', quote.id, $event)" class="flex items-center gap-2 group">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" :class="emit('is-favorite', quote.id) ? 'text-rose-500 fill-current' : 'text-stone-300'" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" :class="isFavorite ? 'text-rose-500 fill-current' : 'text-stone-300'" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
-              <span class="text-[9px] font-bold uppercase tracking-widest text-stone-400 group-hover:text-stone-900">{{ emit('is-favorite', quote.id) ? 'Saved' : 'Save' }}</span>
+              <span class="text-[9px] font-bold uppercase tracking-widest text-stone-400 group-hover:text-stone-900">{{ isFavorite ? 'Saved' : 'Save' }}</span>
             </button>
             <button @click="emit('copy', quote, $event)" class="flex items-center gap-2 group">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-stone-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">

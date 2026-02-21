@@ -10,11 +10,9 @@ import { useQuotes } from './composables/useQuotes'
 import { useFavorites } from './composables/useFavorites'
 import type { Quote } from './types/quote'
 
-// --- Logic ---
 const { allQuotes, displayedQuotes, loading, loadingMore, loadAllQuotes, appendMoreQuotes } = useQuotes()
 const { favorites, loadFavorites, toggleFavorite, isFavorite } = useFavorites()
 
-// --- UI State ---
 const searchQuery = ref('')
 const selectedQuote = ref<Quote | null>(null)
 const showManifesto = ref(false)
@@ -22,7 +20,6 @@ const showArchive = ref(false)
 const observerTarget = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
 
-// --- Computed ---
 const filteredQuotes = computed(() => {
   if (!searchQuery.value) return displayedQuotes.value
   const query = searchQuery.value.toLowerCase()
@@ -36,7 +33,6 @@ const savedQuotes = computed(() => {
   return allQuotes.value.filter(q => favorites.value.includes(q.id))
 })
 
-// --- Methods ---
 const copyToClipboard = async (quote: Quote, event: Event) => {
   event.stopPropagation()
   const text = `"${quote.quote}" — ${quote.author}\n\nVia Qutera Archive`
@@ -82,7 +78,6 @@ onUnmounted(() => {
 
     <main class="flex-grow w-full">
       <div class="max-w-6xl mx-auto px-6 pt-32 pb-12 md:pb-24 w-full">
-        <!-- Status Messages -->
         <div v-if="filteredQuotes.length === 0 && !loading" class="h-[40vh] flex flex-col items-center justify-center text-stone-300 gap-4">
           <span class="text-[10px] font-bold uppercase tracking-[0.4em]">No results found</span>
         </div>
@@ -91,7 +86,6 @@ onUnmounted(() => {
           <div class="w-6 h-6 border-2 border-stone-200 border-t-stone-900 rounded-full animate-spin"></div>
         </div>
 
-        <!-- Grid -->
         <div 
           v-else
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20 md:gap-y-32"
@@ -108,7 +102,6 @@ onUnmounted(() => {
           />
         </div>
 
-        <!-- Scroll Target -->
         <div ref="observerTarget" class="w-full py-20 flex justify-center">
           <div v-if="loadingMore" class="flex gap-1.5">
             <div class="w-1.5 h-1.5 rounded-full bg-stone-300 animate-bounce" style="animation-delay: 0ms"></div>
@@ -119,7 +112,6 @@ onUnmounted(() => {
       </div>
     </main>
 
-    <!-- Overlays -->
     <ArchiveOverlay 
       :show="showArchive"
       :quotes="savedQuotes"
@@ -135,10 +127,10 @@ onUnmounted(() => {
 
     <QuoteModal 
       :quote="selectedQuote"
+      :is-favorite="selectedQuote ? isFavorite(selectedQuote.id) : false"
       @close="selectedQuote = null"
       @toggle-favorite="toggleFavorite"
       @copy="copyToClipboard"
-      @is-favorite="isFavorite"
     />
   </div>
 </template>
