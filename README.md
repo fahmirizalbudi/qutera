@@ -1,54 +1,87 @@
-# .
+<div align="center">
+<img src="src/assets/logo.svg" width="120" alt="Qutera Logo" />
 
-This template should help get you started developing with Vue 3 in Vite.
+<br />
+<br />
 
-## Recommended IDE Setup
+![](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
+![](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+</div>
 
-## Recommended Browser Setup
+<br/>
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Qutera
 
-## Type Support for `.vue` Imports in TS
+Qutera is a high-end, minimalist quote archive built with Vue 3 and TypeScript. Conceived as "The Art of Curated Wisdom," it provides a sophisticated, distraction-free interface for exploring an infinite mosaic of human thought. The application follows a professional component-based architecture and utilizes modern patterns like Composables and Services to ensure clean, scalable code.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Preview
 
-## Customize configuration
+<p align="center">
+  <img src="qutera-capture.png" width="800" alt="Qutera Interface" />
+</p>
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Features
 
-## Project Setup
+- **Infinite Scrolling Archive:** A seamless, endless vertical flow of wisdom powered by IntersectionObserver and GSAP animations.
+- **Personal Collection:** A persistent "Save" system that allows users to curate their own archive, stored locally for private reflection.
+- **Floating Glass Header:** A Dribbble-inspired, glassmorphic navigation island that centers the experience while maximizing screen estate.
+- **Editorial Typography:** A premium pairing of *Inter* and *Newsreader* fonts, optimized for a sophisticated reading experience.
+- **Global Search & Filter:** Instant discovery across the entire archive via a high-performance, real-time search interface.
+- **Immersive Overlays:** Dedicated full-screen experiences for the Personal Archive and the Brand Manifesto, featuring fluid transitions.
+- **Advanced SEO:** Best-practice implementation including dynamic OpenGraph tags and a custom SVG favicon for brand consistency.
 
-```sh
-npm install
+## Tech Stack
+
+- **Vue 3 (Composition API):** A modern, high-performance framework for building reactive user interfaces.
+- **TypeScript:** Ensuring enterprise-grade type safety and robust developer experience.
+- **Tailwind CSS v4:** High-fidelity styling using the latest utility-first framework standards for modern design.
+- **GSAP (GreenSock):** Professional-grade animations for fluid transitions and interactive micro-moments.
+- **Vite:** Next-generation frontend tooling for an ultra-fast development cycle and optimized production builds.
+- **Newsreader Typography:** A high-contrast variable serif chosen for its prestigious editorial aesthetic.
+
+## Getting Started
+
+To get a local copy of this project up and running, follow these steps.
+
+### Prerequisites
+
+- **Node.js 20.x** or higher.
+- **NPM** or **PNPM** for dependency management.
+
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/fahmirizalbudi/qutera.git
+   cd qutera
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Development:**
+
+   ```bash
+   npm run dev
+   ```
+
+Access the application at [http://localhost:5173](http://localhost:5173).
+
+## Deployment
+
+The project is pre-configured for GitHub Pages. To deploy your own version:
+
+```bash
+npm run deploy
 ```
 
-### Compile and Hot-Reload for Development
+## License
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+All rights reserved. This project is for educational purposes and portfolio demonstration only.
