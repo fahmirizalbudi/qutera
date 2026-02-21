@@ -5,7 +5,6 @@ import QuoteCard from './components/quotes/QuoteCard.vue'
 import QuoteModal from './components/quotes/QuoteModal.vue'
 import ArchiveOverlay from './components/overlays/ArchiveOverlay.vue'
 import ManifestoOverlay from './components/overlays/ManifestoOverlay.vue'
-
 import { useQuotes } from './composables/useQuotes'
 import { useFavorites } from './composables/useFavorites'
 import type { Quote } from './types/quote'
