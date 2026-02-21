@@ -46,7 +46,8 @@ const copyToClipboard = async (quote: Quote, event: Event) => {
 
 const setupInfiniteScroll = () => {
   observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !loading.value && !loadingMore.value && !searchQuery.value) {
+    const entry = entries[0]
+    if (entry && entry.isIntersecting && !loading.value && !loadingMore.value && !searchQuery.value) {
       appendMoreQuotes()
     }
   }, { threshold: 0.1, rootMargin: '200px' })
