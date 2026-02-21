@@ -1,0 +1,6 @@
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ultra-Bold Stencil Body -->
+  <path d="M26 16C26 10.4772 21.5228 6 16 6C10.4772 6 6 10.4772 6 16C6 21.5228 10.4772 26 16 26" stroke="#121212" stroke-width="6" stroke-linecap="butt"/>
+  <!-- Integrated High-Contrast Tail -->
+  <path d="M22 22L29 29" stroke="#121212" stroke-width="6" stroke-linecap="round"/>
+</svg>
